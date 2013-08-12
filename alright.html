@@ -1,0 +1,34 @@
+<head>
+  <title>Website? Alright!</title>
+</head>
+
+<body>
+  {{> dashboard}}
+</body>
+
+<template name="dashboard">
+  <h1>Website? Alright!</h1>
+ 
+  <table class="site_table">  
+  <tr>
+    <th>Name</th>
+    <th>Status</th>    
+  </tr>
+  {{#each sites}}
+      {{> site}}
+  {{/each}}
+  
+  <input type="button" class="refresh" value="Refresh" />
+  </table>
+
+
+</template>
+
+
+<template name="site">
+    <tr>
+        <td class="site_name"><a href="{{url}}">{{name}}</a></td>
+        <td class="site_status">{{status}}</td>
+    </tr>
+    
+</template>
