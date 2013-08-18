@@ -38,7 +38,7 @@ Open up the browser's terminal on that page. And type
 
     Sites.insert({name:"ThoughtStorms",url:"http://thoughtstorms.info/view/welcome-visitors"});
     
-That's my wiki, one of the site's I'm monitoring. You'll obviously choose your own. 
+That's my wiki, one of the sites I'm monitoring. You'll obviously choose your own. 
 
 Look at the page again. It should have now updated to add that URL to the list. Hit the "refresh" button to get the status.
     

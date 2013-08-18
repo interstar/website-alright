@@ -8,12 +8,28 @@ if (Meteor.isClient) {
 
   Template.dashboard.events({
     'click input.refresh': function () {
-       if (typeof console !== 'undefined') {
          Meteor.call("fetchSites",function() {
             console.log("Callback from fetchSites");
          });
-       }
+    },
+    
+    'click input.addButton' : function () {
+        var name = document.getElementById("newName").value;
+        var url = document.getElementById("newUrl").value;
+        console.log("name: " + name + "    url: " + url);
+        Sites.insert({name:name,url:url});
+        return false;
+    },
+    
+    'click input.removeButton' : function () {
+        console.log("AAAA");
+        console.log(this);
+        console.log(this.value);
+        Sites.remove({"_id":this._id});
+        return false;
+        
     }
+    
   });
   
 }

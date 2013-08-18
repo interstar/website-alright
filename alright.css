@@ -9,6 +9,8 @@ h1 {
     color:black;    
 }
 
-.site_table th {
-    
+.site_table {
+  border:2px;
+  border-color:#993300;   
+  border-style:dotted;
 }

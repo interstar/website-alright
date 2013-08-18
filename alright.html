@@ -9,6 +9,8 @@
 <template name="dashboard">
   <h1>Website? Alright!</h1>
  
+  <input type="button" class="refresh" value="Refresh" />
+
   <table class="site_table">  
   <tr>
     <th>Name</th>
@@ -17,18 +19,32 @@
   {{#each sites}}
       {{> site}}
   {{/each}}
-  
-  <input type="button" class="refresh" value="Refresh" />
   </table>
 
+  <div>
 
+  {{> form}}
+  </div>
 </template>
 
 
 <template name="site">
     <tr>
         <td class="site_name"><a href="{{url}}">{{name}}</a></td>
-        <td class="site_status">{{status}}</td>
+        <td class="site_status">{{status}} </td>
+        <td class="site_remove"><input type="button" class="removeButton" value="X"/></td>
     </tr>
-    
+</template>
+
+<template name="form">
+<form id="input_form">
+    <div class="form_text">
+        <label>Name : </label>
+        <input id="newName" name="name" />
+        <label>URL : </label>
+        <input id="newUrl" name="url" />
+
+        <input type="button" class="addButton" value="Add &raquo;">
+    </div>
+</form>
 </template>
